@@ -8,14 +8,22 @@ import tseslint from "typescript-eslint";
 import { defineConfig, globalIgnores } from "eslint/config";
 
 export default defineConfig([
-  globalIgnores(["dist"]),
+  globalIgnores(["dist", "src/routeTree.gen.ts"]),
   {
     files: ["**/*.{ts,tsx}"],
     extends: [
       js.configs.recommended,
       tseslint.configs.recommendedTypeChecked,
       reactHooks.configs.flat.recommended,
-      reactRefresh.configs.vite,
+      {
+        ...reactRefresh.configs.vite,
+        rules: {
+          "react-refresh/only-export-components": [
+            "warn",
+            { allowConstantExport: true },
+          ],
+        },
+      },
       reactX.configs["recommended-typescript"],
       // Enable lint rules for React DOM
       reactDom.configs.recommended,
@@ -27,6 +35,12 @@ export default defineConfig([
         project: ["./tsconfig.node.json", "./tsconfig.app.json"],
         tsconfigRootDir: import.meta.dirname,
       },
+    },
+  },
+  {
+    files: ["src/routes/**/*.{ts,tsx}"],
+    rules: {
+      "react-refresh/only-export-components": "off",
     },
   },
 ]);
