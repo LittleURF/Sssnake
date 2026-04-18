@@ -1,0 +1,29 @@
+@theme {
+  /* ── Backgrounds ──────────────────────────────── */
+  --color-bg: #0d1117;
+  --color-bg-surface: #161b22;
+  --color-bg-elevated: #21262d;
+
+  /* ── Accent — neon green ──────────────────────── */
+  --color-accent: #39ff14;
+  --color-accent-dim: #22c55e;
+  --color-accent-glow: rgba(57, 255, 20, 0.25);
+
+  /* ── Text ─────────────────────────────────────── */
+  --color-text-primary: #f0f6fc;
+  --color-text-secondary: #8b949e;
+  --color-text-muted: #484f58;
+
+  /* ── UI chrome ────────────────────────────────── */
+  --color-border: #30363d;
+  --color-danger: #f85149;
+
+  /* ── Leaderboard medals ───────────────────────── */
+  --color-gold: #ffd700;
+  --color-silver: #c0c0c0;
+  --color-bronze: #cd7f32;
+
+  /* ── Typography ───────────────────────────────── */
+  --font-game: "Orbitron Variable", sans-serif;
+  --font-body: "Inter Variable", sans-serif;
+}
