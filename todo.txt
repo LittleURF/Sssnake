@@ -1,0 +1,15 @@
+Todo:
+Design the UI
+Design the FE architecture (mock BE) 
+    (Folder structure, Where anything lives) 
+    Checkout an example tanstack router project.
+
+
+
+
+
+
+Snake single player / multiplayer. 
+Crate your own snake. - snake creator. 
+scoreboards
+Viewing other snake profiles 
