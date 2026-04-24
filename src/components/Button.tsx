@@ -1,9 +1,5 @@
 import type { ButtonHTMLAttributes } from "react";
 
-// Generic reusable button primitive.
-// Supports variant: "primary" | "secondary" | "danger", size: "sm" | "md" | "lg".
-// No business logic — purely visual.
-
 const variantClasses = {
   primary: "bg-accent text-bg font-semibold hover:bg-accent-dim",
   secondary:
