@@ -1,11 +1,22 @@
 Todo:
 Design the UI
-Design the FE architecture (mock BE) 
-    (Folder structure, Where anything lives) 
-    Checkout an example tanstack router project.
 
 
-
+┌─────────────────────────────────────────┐
+│            [navbar]                     │
+│                                         │
+│                                         │
+│          🐍 SSSNAKES                    │  ← font-game, xl, neon glow
+│     "The classic, reimagined."          │  ← text-text-secondary, Inter
+│                                         │
+│   ┌──────────────┐  ┌──────────────┐   │
+│   │   ▶  PLAY    │  │  HIGHSCORES  │   │  ← Play: bg-accent black text, glow
+│   └──────────────┘  └──────────────┘   │  ← Highscores: secondary/ghost style
+│                                         │
+│        ─── YOUR BEST: 004,820 ───       │  ← subtle stat, text-text-muted
+│                                         │
+│                                         │
+└─────────────────────────────────────────┘
 
 
 

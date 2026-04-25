@@ -11,35 +11,44 @@ All design tokens are registered in `src/styles/variables.css` via `@theme {}` a
 
 ### Colors
 
-| Tailwind class prefix | Token | Hex |
-|---|---|---|
-| `bg-bg` / `text-bg` | `--color-bg` | `#0d1117` |
-| `bg-bg-surface` | `--color-bg-surface` | `#161b22` |
-| `bg-bg-elevated` | `--color-bg-elevated` | `#21262d` |
-| `bg-accent` / `text-accent` / `border-accent` | `--color-accent` | `#39ff14` (neon green) |
-| `bg-accent-dim` / `text-accent-dim` | `--color-accent-dim` | `#22c55e` |
-| `text-text-primary` | `--color-text-primary` | `#f0f6fc` |
-| `text-text-secondary` | `--color-text-secondary` | `#8b949e` |
-| `text-text-muted` | `--color-text-muted` | `#484f58` |
-| `border-border` | `--color-border` | `#30363d` |
-| `text-danger` / `bg-danger` | `--color-danger` | `#f85149` |
-| `text-gold` | `--color-gold` | `#ffd700` |
-| `text-silver` | `--color-silver` | `#c0c0c0` |
-| `text-bronze` | `--color-bronze` | `#cd7f32` |
+| Tailwind class prefix                         | Token                    | Hex                    |
+| --------------------------------------------- | ------------------------ | ---------------------- |
+| `bg-bg` / `text-bg`                           | `--color-bg`             | `#0d1117`              |
+| `bg-bg-surface`                               | `--color-bg-surface`     | `#161b22`              |
+| `bg-bg-elevated`                              | `--color-bg-elevated`    | `#21262d`              |
+| `bg-accent` / `text-accent` / `border-accent` | `--color-accent`         | `#39ff14` (neon green) |
+| `bg-accent-dim` / `text-accent-dim`           | `--color-accent-dim`     | `#22c55e`              |
+| `text-text-primary`                           | `--color-text-primary`   | `#f0f6fc`              |
+| `text-text-secondary`                         | `--color-text-secondary` | `#8b949e`              |
+| `text-text-muted`                             | `--color-text-muted`     | `#484f58`              |
+| `border-border`                               | `--color-border`         | `#30363d`              |
+| `text-danger` / `bg-danger`                   | `--color-danger`         | `#f85149`              |
+| `text-gold`                                   | `--color-gold`           | `#ffd700`              |
+| `text-silver`                                 | `--color-silver`         | `#c0c0c0`              |
+| `text-bronze`                                 | `--color-bronze`         | `#cd7f32`              |
 
 ### Fonts
 
-| Tailwind class | Token | Value |
-|---|---|---|
-| `font-game` | `--font-game` | Orbitron (headings, scores, logo) |
-| `font-body` | `--font-body` | Inter (all other text) |
+| Tailwind class | Token         | Value                             |
+| -------------- | ------------- | --------------------------------- |
+| `font-game`    | `--font-game` | Orbitron (headings, scores, logo) |
+| `font-body`    | `--font-body` | Inter (all other text)            |
 
 ### Custom Utilities (`src/index.css`)
 
-| Class | Effect |
-|---|---|
+| Class              | Effect                      |
+| ------------------ | --------------------------- |
 | `text-glow-accent` | Neon green text-shadow glow |
-| `box-glow-accent` | Neon green box-shadow glow |
+| `box-glow-accent`  | Neon green box-shadow glow  |
+
+### `twMergeExtended()` — tailwind-merge helper (`src/lib/tw.ts`)
+
+Use `twMergeExtended()` from `src/lib/tw.ts` instead of bare `twMerge` everywhere. It extends tailwind-merge with knowledge of the custom utility classes above so they are never incorrectly deduplicated against color classes.
+
+```tsx
+import { twMergeExtended } from "../lib/tw";
+// twMergeExtended("text-accent text-glow-accent") → both classes preserved
+```
 
 ## TanStack Router — Active Link Styling
 

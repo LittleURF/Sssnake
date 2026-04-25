@@ -26,9 +26,13 @@
 @layer utilities {
   /* Neon glow helpers */
   .text-glow-accent {
-    text-shadow: 0 0 8px var(--color-accent), 0 0 28px var(--color-accent-glow);
+    text-shadow:
+      0 0 8px var(--color-accent),
+      0 0 28px var(--color-accent-glow);
   }
   .box-glow-accent {
-    box-shadow: 0 0 12px var(--color-accent-glow), 0 0 2px var(--color-accent);
+    box-shadow:
+      0 0 12px var(--color-accent-glow),
+      0 0 2px var(--color-accent);
   }
 }

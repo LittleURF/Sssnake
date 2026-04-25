@@ -10,7 +10,6 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as ProfileRouteImport } from './routes/profile'
-import { Route as HighscoresRouteImport } from './routes/highscores'
 import { Route as GameRouteImport } from './routes/game'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
@@ -18,11 +17,6 @@ import { Route as IndexRouteImport } from './routes/index'
 const ProfileRoute = ProfileRouteImport.update({
   id: '/profile',
   path: '/profile',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const HighscoresRoute = HighscoresRouteImport.update({
-  id: '/highscores',
-  path: '/highscores',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GameRoute = GameRouteImport.update({
@@ -45,14 +39,12 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/game': typeof GameRoute
-  '/highscores': typeof HighscoresRoute
   '/profile': typeof ProfileRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/game': typeof GameRoute
-  '/highscores': typeof HighscoresRoute
   '/profile': typeof ProfileRoute
 }
 export interface FileRoutesById {
@@ -60,22 +52,20 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/game': typeof GameRoute
-  '/highscores': typeof HighscoresRoute
   '/profile': typeof ProfileRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/game' | '/highscores' | '/profile'
+  fullPaths: '/' | '/about' | '/game' | '/profile'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/game' | '/highscores' | '/profile'
-  id: '__root__' | '/' | '/about' | '/game' | '/highscores' | '/profile'
+  to: '/' | '/about' | '/game' | '/profile'
+  id: '__root__' | '/' | '/about' | '/game' | '/profile'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   GameRoute: typeof GameRoute
-  HighscoresRoute: typeof HighscoresRoute
   ProfileRoute: typeof ProfileRoute
 }
 
@@ -86,13 +76,6 @@ declare module '@tanstack/react-router' {
       path: '/profile'
       fullPath: '/profile'
       preLoaderRoute: typeof ProfileRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/highscores': {
-      id: '/highscores'
-      path: '/highscores'
-      fullPath: '/highscores'
-      preLoaderRoute: typeof HighscoresRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/game': {
@@ -123,7 +106,6 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   GameRoute: GameRoute,
-  HighscoresRoute: HighscoresRoute,
   ProfileRoute: ProfileRoute,
 }
 export const routeTree = rootRouteImport

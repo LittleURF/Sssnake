@@ -7,6 +7,7 @@ import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import type { QueryClient } from "@tanstack/react-query";
 import type { ReactNode } from "react";
+import { AppTitle } from "../components/AppTitle";
 
 interface RouterContext {
   queryClient: QueryClient;
@@ -22,17 +23,13 @@ function RootComponent() {
       <header className="bg-bg-surface border-b border-border sticky top-0 z-50">
         <nav className="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
           {/* Logo */}
-          <Link
-            to="/"
-            className="font-game font-black text-xl text-accent text-glow-accent tracking-[0.08em] no-underline"
-          >
-            🐍 SSSNAKES
+          <Link to="/" className="text-xl  no-underline">
+            <AppTitle />
           </Link>
 
           {/* Nav links */}
           <div className="flex items-center gap-8">
             <NavLink to="/">Home</NavLink>
-            <NavLink to="/highscores">Highscores</NavLink>
             <NavLink to="/profile">Your Snake</NavLink>
           </div>
         </nav>
