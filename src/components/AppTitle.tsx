@@ -10,12 +10,10 @@ export function AppTitle({ className, animated }: AppTitleProps) {
     <span
       className={twMergeExtended(
         "font-game font-black text-accent text-glow-accent tracking-widest cursor-default",
-        className,
+        className
       )}
     >
-      <span className={animated ? "animate-snake-slither" : undefined}>
-        🐍
-      </span>{" "}
+      <span className={animated ? "animate-snake-slither" : undefined}>🐍</span>{" "}
       SSSNAKES
     </span>
   );

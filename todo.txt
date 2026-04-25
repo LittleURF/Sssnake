@@ -1,38 +1,15 @@
 Todo:
 Implement the "Play" screen, actors, logic.
-    Make the GamePage show a game window (some border with a different bg-color inside)
-    Prepare actor components: 
-        snake (snake head + snake tail)
-        food (an apple for startes, but can be modifiable)
-        walls (borders, maybe in the middle?)
-    Implement the main game logic
-        Board component, with a 15x17 matrix or so, where each spot is an entity(worm/food/wall) or empty.
+    When isActive, there should be an interval emitting ticks.
         Snake has direction, and each second(modifiable) the snake moves on the board.
         If he moves onto food, delete food, grow snake, spawn new food.
         If he moves onto wall, end game.
-
+        
     Make each play save the score, to be displayed on highscores
 Implement the Highscores screen.
 
+See more about framer-motion
 
-
-
-
-┌─────────────────────────────────────────┐
-│            [navbar]                     │
-│                                         │
-│                                         │
-│          🐍 SSSNAKES                    │  ← font-game, xl, neon glow
-│     "The classic, reimagined."          │  ← text-text-secondary, Inter
-│                                         │
-│   ┌──────────────┐  ┌──────────────┐   │
-│   │   ▶  PLAY    │  │  HIGHSCORES  │   │  ← Play: bg-accent black text, glow
-│   └──────────────┘  └──────────────┘   │  ← Highscores: secondary/ghost style
-│                                         │
-│        ─── YOUR BEST: 004,820 ───       │  ← subtle stat, text-text-muted
-│                                         │
-│                                         │
-└─────────────────────────────────────────┘
 
 
 
