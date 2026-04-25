@@ -1,6 +1,11 @@
 import { twMergeExtended } from "../lib/tw";
 
-export function AppTitle({ className }: { className?: string }) {
+interface AppTitleProps {
+  className?: string;
+  animated?: boolean;
+}
+
+export function AppTitle({ className, animated }: AppTitleProps) {
   return (
     <span
       className={twMergeExtended(
@@ -8,7 +13,10 @@ export function AppTitle({ className }: { className?: string }) {
         className,
       )}
     >
-      🐍 SSSNAKES
+      <span className={animated ? "animate-snake-slither" : undefined}>
+        🐍
+      </span>{" "}
+      SSSNAKES
     </span>
   );
 }

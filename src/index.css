@@ -23,6 +23,27 @@
   }
 }
 
+@keyframes snake-slither {
+  0% {
+    transform: translateX(0) rotate(0deg);
+  }
+  20% {
+    transform: translateX(-6px) rotate(-20deg);
+  }
+  40% {
+    transform: translateX(6px) rotate(15deg);
+  }
+  60% {
+    transform: translateX(-5px) rotate(-12deg);
+  }
+  80% {
+    transform: translateX(5px) rotate(18deg);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+}
+
 @layer utilities {
   /* Neon glow helpers */
   .text-glow-accent {
@@ -34,5 +55,10 @@
     box-shadow:
       0 0 12px var(--color-accent-glow),
       0 0 2px var(--color-accent);
+  }
+
+  .animate-snake-slither {
+    display: inline-block;
+    animation: snake-slither 2s ease-in-out;
   }
 }

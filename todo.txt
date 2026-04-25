@@ -6,11 +6,10 @@ Implement the "Play" screen, actors, logic.
         food (an apple for startes, but can be modifiable)
         walls (borders, maybe in the middle?)
     Implement the main game logic
-        Board component, with a 32x20 matrix or so, where each spot is an entity(worm/food/wall) or empty.
+        Board component, with a 15x17 matrix or so, where each spot is an entity(worm/food/wall) or empty.
         Snake has direction, and each second(modifiable) the snake moves on the board.
         If he moves onto food, delete food, grow snake, spawn new food.
         If he moves onto wall, end game.
-        Ask AI how it would implement the game engine too!
 
     Make each play save the score, to be displayed on highscores
 Implement the Highscores screen.
