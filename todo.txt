@@ -1,10 +1,5 @@
 Todo:
 Implement the "Play" screen, actors, logic.
-    When isActive, there should be an interval emitting ticks.
-        Snake has direction, and each second(modifiable) the snake moves on the board.
-        If he moves onto food, delete food, grow snake, spawn new food.
-        If he moves onto wall, end game.
-        
     Make each play save the score, to be displayed on highscores
 Implement the Highscores screen.
 

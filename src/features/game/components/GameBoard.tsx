@@ -1,37 +1,23 @@
-import { useState } from "react";
+import type { Cell } from "../game.types";
+import { Direction } from "../game.types";
+import { useSnakeGameEngine } from "../hooks/useSnakeGameEngine";
 import { Food } from "./Food";
 import { SnakeBody, SnakeHead, SnakeTail } from "./Snake";
 import { Wall } from "./Wall";
 
-// wall, empty, food, head, body, tail
-type Cell = "w" | " " | "f" | "h" | "b" | "t";
-
+// should come from snakeEngine.
 const COLS = 15;
 const ROWS = 17;
 const CELL_SIZE = 32; // px
 
-const DEFAULT_MAP: Cell[][] = [
-  ["w", "w", "w", "w", "w", "w", "w", "w", "w", "w", "w", "w", "w", "w", "w"],
-  ["w", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "w"],
-  ["w", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "w"],
-  ["w", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "w"],
-  ["w", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "w"],
-  ["w", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "w"],
-  ["w", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "w"],
-  ["w", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "w"],
-  ["w", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "w"],
-  ["w", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "w"],
-  ["w", " ", " ", " ", " ", " ", " ", " ", "h", " ", " ", " ", " ", " ", "w"],
-  ["w", " ", " ", " ", " ", " ", " ", " ", "b", " ", " ", " ", " ", " ", "w"],
-  ["w", " ", " ", " ", " ", " ", " ", " ", "t", " ", " ", " ", " ", " ", "w"],
-  ["w", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "w"],
-  ["w", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "w"],
-  ["w", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "w"],
-  ["w", "w", "w", "w", "w", "w", "w", "w", "w", "w", "w", "w", "w", "w", "w"],
-];
-
-export function GameBoard({ isActive = false }: { isActive: boolean }) {
-  const [map, setMap] = useState(DEFAULT_MAP);
+export function GameBoard({
+  isActive = false,
+  onGameOver,
+}: {
+  isActive: boolean;
+  onGameOver: () => void;
+}) {
+  const { map, direction } = useSnakeGameEngine({ isActive, onGameOver });
 
   return (
     <div
@@ -46,25 +32,25 @@ export function GameBoard({ isActive = false }: { isActive: boolean }) {
     >
       {map.flat().map((cell, i) => (
         <div key={i} className="border border-border/20">
-          {renderCell(cell)}
+          {renderCell(cell, direction)}
         </div>
       ))}
     </div>
   );
 }
 
-function renderCell(cell: Cell) {
+function renderCell(cell: Cell, direction: Direction) {
   switch (cell) {
     case "w":
       return <Wall />;
     case "f":
       return <Food />;
     case "h":
-      return <SnakeHead direction="up" />;
+      return <SnakeHead direction={direction} />;
     case "b":
-      return <SnakeBody direction="down" />;
+      return <SnakeBody direction={direction} />;
     case "t":
-      return <SnakeTail direction="down" />;
+      return <SnakeTail direction={direction} />;
     default:
       return null;
   }

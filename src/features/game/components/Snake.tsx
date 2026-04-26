@@ -1,4 +1,4 @@
-export type Direction = "up" | "down" | "left" | "right";
+import { Direction } from "../game.types";
 
 // All three components are designed facing RIGHT by default, then rotated.
 const rotationClass: Record<Direction, string> = {
