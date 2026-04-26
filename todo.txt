@@ -1,14 +1,3 @@
 Todo:
-Implement the "Play" screen, actors, logic.
-    Make each play save the score, to be displayed on highscores
-Implement the Highscores screen.
-
-See more about framer-motion
-
-
-
-
-Snake single player / multiplayer. 
 Crate your own snake. - snake creator. 
-scoreboards
 Viewing other snake profiles 

@@ -1,11 +1,8 @@
 import { motion } from "framer-motion";
-import { useGameStore } from "../store/gameStore";
+import { selectLatestScore, useGameStore } from "../store/gameStore";
 
 export function GameOverOverlay() {
-  const lastScore = useGameStore(
-    ({ highscores }: { highscores: number[] }) =>
-      highscores[highscores.length - 1] ?? 0,
-  );
+  const latestScore = useGameStore(selectLatestScore);
   return (
     <motion.div
       className="absolute inset-0 flex flex-col items-center justify-center bg-bg/80 backdrop-blur-sm"
@@ -28,7 +25,7 @@ export function GameOverOverlay() {
             Score
           </span>
           <span className="font-game text-5xl text-accent text-glow-accent">
-            {lastScore}
+            {latestScore?.score ?? 0}
           </span>
         </div>
       </motion.div>
