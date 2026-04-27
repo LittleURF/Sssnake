@@ -8,6 +8,7 @@ import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import type { QueryClient } from "@tanstack/react-query";
 import { AppTitle } from "../components/AppTitle";
+import { ErrorBoundary } from "react-error-boundary";
 
 interface RouterContext {
   queryClient: QueryClient;
@@ -33,7 +34,11 @@ function RootComponent() {
         <p className="mt-4 text-text-secondary text-lg font-body">
           The classic, reimagined.
         </p>
-        <Outlet />
+        <ErrorBoundary
+          fallback={<p>Error :( Refresh or do something please</p>}
+        >
+          <Outlet />
+        </ErrorBoundary>
       </main>
 
       <TanStackRouterDevtools />
