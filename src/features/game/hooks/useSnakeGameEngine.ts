@@ -9,7 +9,7 @@ import {
   stepSnake,
 } from "../game.utils";
 import type { Pos } from "../game.utils";
-import { useGameStore } from "../store/gameStore";
+import { useGameStore } from "../../highscores/store/highscoresStore";
 
 const DEFAULT_MAP: Cell[][] = [
   ["w", "w", "w", "w", "w", "w", "w", "w", "w", "w", "w", "w", "w", "w", "w"],

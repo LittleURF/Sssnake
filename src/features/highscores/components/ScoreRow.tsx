@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { twMergeExtended } from "../../../lib/tw";
-import type { HighscoreEntry } from "../../game/store/gameStore";
+import type { HighscoreEntry } from "../store/highscoresStore";
 import { RankBadge } from "./RankBadge";
 import { RANK_COLORS } from "../consts";
 

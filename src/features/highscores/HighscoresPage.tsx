@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { useGameStore } from "../game/store/gameStore";
+import { useGameStore } from "./store/highscoresStore";
 import { Button } from "../../components/Button";
 import { ScoreRow } from "./components/ScoreRow";
 

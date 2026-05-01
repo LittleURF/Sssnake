@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
 import { Button } from "../../../components/Button";
-import { selectLatestScore, useGameStore } from "../store/gameStore";
+import {
+  selectLatestScore,
+  useGameStore,
+} from "../../highscores/store/highscoresStore";
 import { Link } from "@tanstack/react-router";
 
 interface GameOverOverlayProps {
