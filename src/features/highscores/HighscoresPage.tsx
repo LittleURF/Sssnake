@@ -5,6 +5,7 @@ import { ScoreRow } from "./components/ScoreRow";
 
 export function HighscoresPage() {
   const highscores = useGameStore((s) => s.highscores);
+  const highscoresSorted = highscores.sort((a, b) => b.score - a.score);
 
   return (
     <div className="flex flex-col items-center gap-6 pt-10 w-full max-w-sm px-4">
@@ -24,7 +25,7 @@ export function HighscoresPage() {
       ) : (
         <>
           <ol className="w-full flex flex-col gap-2">
-            {highscores.map((entry, i) => (
+            {highscoresSorted.map((entry, i) => (
               <ScoreRow key={entry.date} entry={entry} rank={i + 1} />
             ))}
           </ol>

@@ -15,7 +15,11 @@ export function GamePage() {
   return (
     <div className="pt-8">
       <div className="relative inline-block">
-        <GameSession key={gameKey} onGameOver={() => setIsGameOver(true)} />
+        <GameSession
+          key={gameKey}
+          isGameOver={isGameOver}
+          onGameOver={() => setIsGameOver(true)}
+        />
         <AnimatePresence>
           {isGameOver && <GameOverOverlay onPlayAgain={handlePlayAgain} />}
         </AnimatePresence>

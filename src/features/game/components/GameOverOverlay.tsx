@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "../../../components/Button";
 import { selectLatestScore, useGameStore } from "../store/gameStore";
+import { Link } from "@tanstack/react-router";
 
 interface GameOverOverlayProps {
   onPlayAgain: () => void;
@@ -39,6 +40,10 @@ export function GameOverOverlay({ onPlayAgain }: GameOverOverlayProps) {
         <Button onClick={onPlayAgain} className="mt-6">
           Play Again
         </Button>
+
+        <Link to="/highscores">
+          <Button className="mt-2">Highscores</Button>
+        </Link>
       </motion.div>
     </motion.div>
   );

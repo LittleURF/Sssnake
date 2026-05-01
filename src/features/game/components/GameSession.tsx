@@ -3,21 +3,21 @@ import { useState } from "react";
 import { Countdown } from "./Countdown";
 import { GameBoard } from "./GameBoard";
 
-export function GameSession({ onGameOver }: { onGameOver: () => void }) {
+export function GameSession({
+  isGameOver,
+  onGameOver,
+}: {
+  isGameOver: boolean;
+  onGameOver: () => void;
+}) {
   const [showCountdown, setShowCountdown] = useState(true);
-  const [isGameOver, setIsGameOver] = useState(false);
-
-  const handleGameOver = () => {
-    setIsGameOver(true);
-    onGameOver();
-  };
 
   return (
     <div className="pt-8">
       <div className="relative inline-block">
         <GameBoard
           isActive={!showCountdown && !isGameOver}
-          onGameOver={handleGameOver}
+          onGameOver={onGameOver}
         />
         <AnimatePresence>
           {showCountdown && (
