@@ -107,11 +107,6 @@ export function useSnakeGameEngine({
     setMap((prev) => applyToMap(prev, patches));
   });
 
-  // Reset score when a new game starts
-  useEffect(() => {
-    if (isActive) setScore(0);
-  }, [isActive]);
-
   // Game loop
   useEffect(() => {
     if (!isActive) return;

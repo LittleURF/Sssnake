@@ -1,13 +1,20 @@
 import { motion } from "framer-motion";
+import { Button } from "../../../components/Button";
 import { selectLatestScore, useGameStore } from "../store/gameStore";
 
-export function GameOverOverlay() {
+interface GameOverOverlayProps {
+  onPlayAgain: () => void;
+}
+
+export function GameOverOverlay({ onPlayAgain }: GameOverOverlayProps) {
   const latestScore = useGameStore(selectLatestScore);
+
   return (
     <motion.div
       className="absolute inset-0 flex flex-col items-center justify-center bg-bg/80 backdrop-blur-sm"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
       transition={{ duration: 0.4 }}
     >
       <motion.div
@@ -28,6 +35,10 @@ export function GameOverOverlay() {
             {latestScore?.score ?? 0}
           </span>
         </div>
+
+        <Button onClick={onPlayAgain} className="mt-6">
+          Play Again
+        </Button>
       </motion.div>
     </motion.div>
   );
