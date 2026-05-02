@@ -1,10 +1,10 @@
 import { Link } from "@tanstack/react-router";
-import { useGameStore } from "./store/highscoresStore";
+import { useHighscoresStore } from "./store/highscoresStore";
 import { Button } from "../../components/Button";
 import { ScoreRow } from "./components/ScoreRow";
 
 export function HighscoresPage() {
-  const highscores = useGameStore((s) => s.highscores);
+  const highscores = useHighscoresStore((s) => s.highscores);
   const highscoresSorted = highscores.sort((a, b) => b.score - a.score);
 
   return (

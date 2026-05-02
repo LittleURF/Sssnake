@@ -33,6 +33,6 @@ function customRender(
 ): RenderResult {
   return render(ui, { wrapper: AllTheProviders, ...options });
 }
-
+export * from "@testing-library/user-event";
 export * from "@testing-library/react";
 export { customRender as render };

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { Button } from "../../../components/Button";
 import {
   selectLatestScore,
-  useGameStore,
+  useHighscoresStore,
 } from "../../highscores/store/highscoresStore";
 import { Link } from "@tanstack/react-router";
 
@@ -11,7 +11,7 @@ interface GameOverOverlayProps {
 }
 
 export function GameOverOverlay({ onPlayAgain }: GameOverOverlayProps) {
-  const latestScore = useGameStore(selectLatestScore);
+  const latestScore = useHighscoresStore(selectLatestScore);
 
   return (
     <motion.div

@@ -9,7 +9,7 @@ import {
   stepSnake,
 } from "../game.utils";
 import type { Pos } from "../game.utils";
-import { useGameStore } from "../../highscores/store/highscoresStore";
+import { useHighscoresStore } from "../../highscores/store/highscoresStore";
 
 const DEFAULT_MAP: Cell[][] = [
   ["w", "w", "w", "w", "w", "w", "w", "w", "w", "w", "w", "w", "w", "w", "w"],
@@ -62,7 +62,7 @@ export function useSnakeGameEngine({
   isActive,
   onGameOver,
 }: UseSnakeGameEngineOptions) {
-  const submitScore = useGameStore((s) => s.submitScore);
+  const submitScore = useHighscoresStore((s) => s.submitScore);
 
   const [map, setMap] = useState<Cell[][]>(() => {
     const food = randomEmptyCell(DEFAULT_MAP);

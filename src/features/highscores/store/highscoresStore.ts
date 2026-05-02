@@ -5,12 +5,12 @@ export interface HighscoreEntry {
   date: string; // ISO date string
 }
 
-export interface GameStore {
+export interface HighscoresStore {
   highscores: HighscoreEntry[];
   submitScore: (score: number) => void;
 }
 
-export const useGameStore = create<GameStore>((set) => ({
+export const useHighscoresStore = create<HighscoresStore>((set) => ({
   highscores: [],
   submitScore: (score) =>
     set((state) => {
@@ -23,7 +23,8 @@ export const useGameStore = create<GameStore>((set) => ({
     }),
 }));
 
-export const selectLatestScore = (store: GameStore) => store.highscores.at(-1);
+export const selectLatestScore = (store: HighscoresStore) =>
+  store.highscores.at(-1);
 
-export const selectHighestScore = (s: GameStore) =>
+export const selectHighestScore = (s: HighscoresStore) =>
   s.highscores.reduce((max, e) => (e.score > max ? e.score : max), 0);
