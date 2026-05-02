@@ -38,6 +38,19 @@ export default defineConfig([
     },
   },
   {
+    files: ["src/**/*.{test,spec}.{ts,tsx}", "src/test/**/*.{ts,tsx}"],
+    languageOptions: {
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+        ...globals.vitest,
+      },
+    },
+    rules: {
+      "react-refresh/only-export-components": "off",
+    },
+  },
+  {
     files: ["src/routes/**/*.{ts,tsx}"],
     rules: {
       "react-refresh/only-export-components": "off",
