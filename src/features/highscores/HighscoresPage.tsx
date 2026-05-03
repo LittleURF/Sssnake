@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useHighscoresStore } from "./store/highscoresStore";
-import { Button } from "../../components/Button";
+import { Button } from "../../components/Button/Button";
 import { ScoreRow } from "./components/ScoreRow";
 
 export function HighscoresPage() {
