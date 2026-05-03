@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Button } from "../../components/Button";
+import { Button } from "../../components/Button/Button";
 
 export function StartPage() {
   return (

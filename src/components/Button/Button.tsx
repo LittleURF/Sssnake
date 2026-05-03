@@ -1,5 +1,5 @@
 import type { ButtonHTMLAttributes } from "react";
-import { twMergeExtended } from "../lib/tw";
+import { twMergeExtended } from "../../lib/tw";
 
 const variantClasses = {
   primary:

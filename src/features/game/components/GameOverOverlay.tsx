@@ -1,17 +1,28 @@
 import { motion } from "framer-motion";
-import { Button } from "../../../components/Button";
 import {
   selectLatestScore,
   useHighscoresStore,
 } from "../../highscores/store/highscoresStore";
 import { Link } from "@tanstack/react-router";
+import Rating from "@mui/material/Rating";
+import { Button } from "../../../components/Button/Button";
+import { useState, type SyntheticEvent } from "react";
 
 interface GameOverOverlayProps {
   onPlayAgain: () => void;
 }
 
 export function GameOverOverlay({ onPlayAgain }: GameOverOverlayProps) {
+  const [rating, setRating] = useState<number | undefined>();
   const latestScore = useHighscoresStore(selectLatestScore);
+
+  function handleRatingChange(_: SyntheticEvent, value: number | null): void {
+    if (value === null) {
+      return;
+    }
+
+    setRating(value);
+  }
 
   return (
     <motion.div
@@ -38,6 +49,13 @@ export function GameOverOverlay({ onPlayAgain }: GameOverOverlayProps) {
           <span className="font-game text-5xl text-accent text-glow-accent">
             {latestScore?.score ?? 0}
           </span>
+        </div>
+
+        <div className="flex flex-col items-center gap-1.5">
+          <span className="font-body text-xs text-text-secondary uppercase tracking-wider">
+            Rate the run
+          </span>
+          <Rating value={rating} onChange={handleRatingChange} />
         </div>
 
         <Button onClick={onPlayAgain} className="mt-6">
