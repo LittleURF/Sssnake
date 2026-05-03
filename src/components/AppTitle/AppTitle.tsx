@@ -1,4 +1,4 @@
-import { twMergeExtended } from "../lib/tw";
+import { twMergeExtended } from "../../lib/tw";
 
 interface AppTitleProps {
   className?: string;
@@ -10,7 +10,7 @@ export function AppTitle({ className, animated }: AppTitleProps) {
     <span
       className={twMergeExtended(
         "font-game font-black text-accent text-glow-accent tracking-widest cursor-default",
-        className
+        className,
       )}
     >
       <span className={animated ? "animate-snake-slither" : undefined}>🐍</span>{" "}

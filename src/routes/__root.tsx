@@ -7,7 +7,7 @@ import {
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import type { QueryClient } from "@tanstack/react-query";
-import { AppTitle } from "../components/AppTitle";
+import { AppTitle } from "../components/AppTitle/AppTitle";
 import { ErrorBoundary } from "react-error-boundary";
 
 interface RouterContext {

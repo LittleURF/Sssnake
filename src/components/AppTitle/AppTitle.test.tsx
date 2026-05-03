@@ -1,5 +1,5 @@
 import { AppTitle } from "./AppTitle";
-import { render, screen, userEvent } from "../test/test-utils";
+import { render, screen, userEvent } from "../../test/test-utils";
 describe("AppTitle", () => {
   it("displays SSSNAKES", () => {
     render(<AppTitle />);
