@@ -1,6 +1,4 @@
 Todo:
-add a spec test, try replacing hooks
-add a story
 
 Crate your own snake. - snake creator. 
 Viewing other snake profiles 
