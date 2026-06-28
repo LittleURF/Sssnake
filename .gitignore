@@ -1,3 +1,12 @@
+# ========================
+# Frontend (Node / Vite)
+# ========================
+node_modules
+dist
+dist-ssr
+*.local
+storybook-static
+
 # Logs
 logs
 *.log
@@ -6,22 +15,51 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
+*storybook.log
 
-node_modules
-dist
-dist-ssr
-*.local
+# ========================
+# .NET / C#
+# ========================
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
+# Build output
+bin/
+obj/
+
+# NuGet
+*.nupkg
+*.snupkg
+project.lock.json
+artifacts/
+
+# User-specific & local overrides
+*.user
+*.userosscache
 *.suo
+*.userprefs
+
+# Rider / ReSharper
+.idea/
+_ReSharper*/
+*.DotSettings.user
+
+# ========================
+# Visual Studio
+# ========================
+.vs/
+*.rsuser
 *.ntvs*
 *.njsproj
-*.sln
 *.sw?
 
-*storybook.log
-storybook-static
+# ========================
+# OS
+# ========================
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ========================
+# Editor
+# ========================
+.vscode/*
+!.vscode/extensions.json

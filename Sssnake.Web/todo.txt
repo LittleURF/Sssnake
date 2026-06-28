@@ -1,4 +1,7 @@
 Todo:
+Give each session a random nickname
+Attach nickname to highscores entries.
+Use WebApi to get/set highscores
 
 Crate your own snake. - snake creator. 
 Viewing other snake profiles 
