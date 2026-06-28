@@ -4,9 +4,12 @@ namespace Sssnake.Domain.Highscores.Domain;
 
 public sealed class HighscoreEntry
 {
-    public Guid Id { get; }
-    public int Score { get; }
-    public DateTime RecordedAt { get; }
+    public Guid Id { get; private set; }
+    public int Score { get; private set; }
+    public DateTime RecordedAt { get; private set; }
+
+    // Required by EF Core
+    private HighscoreEntry() { }
 
     private HighscoreEntry(Guid id, int score, DateTime recordedAt)
     {
@@ -23,7 +26,4 @@ public sealed class HighscoreEntry
         return new HighscoreEntry(Guid.NewGuid(), score, DateTime.UtcNow);
     }
 
-    // Reconstitution from persistence
-    public static HighscoreEntry Reconstitute(Guid id, int score, DateTime recordedAt)
-        => new(id, score, recordedAt);
 }

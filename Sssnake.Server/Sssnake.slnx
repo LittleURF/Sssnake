@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="Sssnake.Api/Sssnake.Api.csproj" />
   <Project Path="Sssnake.Domain/Sssnake.Domain.csproj" />
+  <Project Path="Sssnake.Infrastructure/Sssnake.Infrastructure.csproj" />
 </Solution>

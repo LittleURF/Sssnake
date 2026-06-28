@@ -1,12 +1,11 @@
 using Microsoft.AspNetCore.Mvc;
 using Sssnake.Api.Dtos;
 using Sssnake.Domain.Highscores.Services;
-
 namespace Sssnake.Api.Controllers;
 
 [ApiController]
 [Route("[controller]")]
-public class HighscoresController(HighscoreService highscoreService) : ControllerBase
+public class HighscoresController(IHighscoreService highscoreService) : ControllerBase
 {
     [HttpGet]
     [ProducesResponseType<HighscoreResponse>(StatusCodes.Status200OK)]
